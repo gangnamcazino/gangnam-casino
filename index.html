@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>강남 카지노 VIP LOUNGE & CONCIERGE</title>
+  
+  <!-- Pretendard Font (Bold & Regular 단일 폰트 체계) -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            gold: {
+              300: '#F7E7C4',
+              400: '#E8CF92',
+              500: '#D4AF37',
+              600: '#B08D26',
+              700: '#856716',
+            },
+            noir: {
+              900: '#0C1017',
+              950: '#06080E',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .gold-border {
+      border: 1px solid rgba(212, 175, 55, 0.25);
+    }
+    .gold-border-hover:hover {
+      border-color: rgba(212, 175, 55, 0.7);
+      box-shadow: 0 0 25px rgba(212, 175, 55, 0.2);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FFF3D6 0%, #D4AF37 55%, #AA8820 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gold-button-gradient {
+      background: linear-gradient(135deg, #F9EAC7 0%, #D4AF37 50%, #B89228 100%);
+    }
+
+    /* 시선 집중 펄스 글로우 애니메이션 */
+    @keyframes pulse-gold {
+      0%, 100% {
+        box-shadow: 0 0 12px rgba(212, 175, 55, 0.4), 0 0 24px rgba(212, 175, 55, 0.15);
+        transform: scale(1);
+      }
+      50% {
+        box-shadow: 0 0 26px rgba(212, 175, 55, 0.85), 0 0 45px rgba(212, 175, 55, 0.4);
+        transform: scale(1.025);
+      }
+    }
+    .animate-btn-pulse {
+      animation: pulse-gold 2.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+
+    /* 버튼 위로 빛이 흐르는 샤인 이펙트 */
+    .shine-effect {
+      position: relative;
+      overflow: hidden;
+    }
+    .shine-effect::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.45) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      transform: rotate(25deg);
+      animation: shine-sweep 3.2s ease-in-out infinite;
+    }
+    @keyframes shine-sweep {
+      0% { left: -70%; }
+      30%, 100% { left: 140%; }
+    }
+  </style>
+</head>
+<body class="bg-noir-950 text-slate-200 font-sans font-normal antialiased pb-24 md:pb-0 relative selection:bg-gold-500 selection:text-black">
+
+  <!-- 앰비언트 골드 조명 -->
+  <div class="fixed top-0 left-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-[140px] pointer-events-none -z-10"></div>
+  <div class="fixed top-1/2 right-10 w-[30rem] h-[30rem] bg-amber-600/8 rounded-full blur-[160px] pointer-events-none -z-10"></div>
+  <div class="fixed bottom-10 left-1/3 w-[35rem] h-[35rem] bg-yellow-500/5 rounded-full blur-[180px] pointer-events-none -z-10"></div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-noir-950/85 backdrop-blur-xl border-b border-gold-500/20">
+    <div class="max-w-7xl mx-auto px-5 h-16 md:h-20 flex items-center justify-between">
+      
+      <!-- [왼쪽 상단] 강남 카지노 VIP LOUNGE 럭셔리 로고 -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative flex items-center justify-center">
+          <svg class="w-10 h-10 md:w-11 md:h-11 transition-transform duration-300 group-hover:scale-105" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="headerGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFF5D6"/>
+                <stop offset="35%" stop-color="#E5C77A"/>
+                <stop offset="70%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#937218"/>
+              </linearGradient>
+              <filter id="headerGoldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#D4AF37" flood-opacity="0.4"/>
+              </filter>
+            </defs>
+            <polygon points="50,6 88,27 88,68 50,94 12,68 12,27" stroke="url(#headerGoldGrad)" stroke-width="2.5" fill="#0C1017" filter="url(#headerGoldGlow)"/>
+            <polygon points="50,12 82,30 82,65 50,88 18,65 18,30" stroke="url(#headerGoldGrad)" stroke-width="1" stroke-dasharray="2 3" stroke-opacity="0.65"/>
+            <path d="M37 34 L42 42 L50 30 L58 42 L63 34 L61 45 L39 45 Z" fill="url(#headerGoldGrad)"/>
+            <circle cx="50" cy="27" r="2" fill="url(#headerGoldGrad)"/>
+            <circle cx="37" cy="31" r="1.5" fill="url(#headerGoldGrad)"/>
+            <circle cx="63" cy="31" r="1.5" fill="url(#headerGoldGrad)"/>
+            <path d="M36 49 L46.5 73 L53.5 73 L64 49 L58 49 L50 67 L42 49 Z" fill="url(#headerGoldGrad)"/>
+            <polygon points="50,77 51.5,81 55,81 52,83 53.5,86.5 50,84.5 46.5,86.5 48,83 45,81 48.5,81" fill="url(#headerGoldGrad)"/>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base md:text-lg font-bold tracking-[0.16em] text-white leading-tight">
+            강남 카지노 <span class="gold-gradient-text">VIP LOUNGE</span>
+          </span>
+          <span class="text-[9px] md:text-[10px] tracking-[0.25em] text-gold-400 font-bold uppercase mt-0.5">
+            Private Concierge & Club
+          </span>
+        </div>
+      </a>
+      
+      <!-- Top CTA 3 Buttons (PC) -->
+      <div class="hidden lg:flex items-center gap-2.5">
+        <a href="tel:01064931858" class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs font-bold tracking-wider gold-border text-gold-400 hover:bg-gold-500/10 active:scale-95 transition-all">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+          <span>전화연결</span>
+        </a>
+
+        <a href="https://t.me/ktx3309" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs font-bold tracking-wider bg-[#229ED9] text-white hover:bg-[#1C8EC4] active:scale-95 transition-all shadow-sm">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>텔레그램</span>
+        </a>
+
+        <a href="https://open.kakao.com/me/ppkkyu333" target="_blank" rel="noopener noreferrer" class="shine-effect animate-btn-pulse flex items-center gap-1.5 px-4 py-2.5 rounded-lg text-xs font-bold tracking-wider bg-[#FEE500] text-[#191919] hover:bg-[#FADA0A] active:scale-95 transition-all shadow-md">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.88 5.37 4.71 6.74-.21.78-.76 2.82-.87 3.25-.14.54.2.53.42.38.17-.11 2.75-1.87 3.86-2.63.62.09 1.24.14 1.88.14 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+          <span>카카오톡</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative border-b border-gold-500/20 overflow-hidden py-16 md:py-24">
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <div class="lg:col-span-7 space-y-6 text-left">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gold-500/10 border border-gold-500/30 text-xs font-bold tracking-widest text-gold-400">
+          <span class="w-1.5 h-1.5 rounded-full bg-gold-400 animate-pulse"></span>
+          5-STAR LUXURY CASINO & CONCIERGE
+        </div>
+        
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
+          품격의 정점,<br />
+          <span class="gold-gradient-text">강남 카지노 VIP 라운지</span>에 오신 것을 환영합니다.
+        </h1>
+        
+        <p class="text-slate-400 text-base md:text-lg leading-relaxed max-w-xl font-normal">
+          100% 사전 예약제로 철저히 보호되는 프라이빗 룸에서 최고 수준의 테이블 게임과 1:1 맞춤형 럭셔리 컨시어지를 경험하십시오.
+        </p>
+        
+        <!-- 3 CTA Buttons (Hero) -->
+        <div class="flex flex-col sm:flex-row gap-3 pt-4">
+          <a href="tel:01064931858" class="shine-effect animate-btn-pulse flex-1 flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl gold-button-gradient text-noir-950 font-bold text-base hover:brightness-110 active:scale-95 transition-all shadow-xl">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+            <span>바로 전화연결</span>
+          </a>
+
+          <a href="https://t.me/ktx3309" target="_blank" rel="noopener noreferrer" class="shine-effect flex-1 flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#229ED9] hover:bg-[#1C8EC4] text-white font-bold text-base active:scale-95 transition-all shadow-lg">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <span>텔레그램 연결</span>
+          </a>
+
+          <a href="https://open.kakao.com/me/ppkkyu333" target="_blank" rel="noopener noreferrer" class="shine-effect flex-1 flex items-center justify-center gap-2.5 px-6 py-4 rounded-xl bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-bold text-base active:scale-95 transition-all shadow-lg">
+            <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.88 5.37 4.71 6.74-.21.78-.76 2.82-.87 3.25-.14.54.2.53.42.38.17-.11 2.75-1.87 3.86-2.63.62.09 1.24.14 1.88.14 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+            <span>카카오톡 연결</span>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Hero Main Visual (Image 01) -->
+      <div class="lg:col-span-5 relative">
+        <div class="absolute -inset-1 rounded-3xl bg-gradient-to-b from-gold-500/40 via-amber-500/10 to-transparent blur-md"></div>
+        <div class="relative aspect-[4/3] rounded-2xl overflow-hidden gold-border bg-noir-900 shadow-2xl">
+          <img 
+            src="./1.%20%EB%94%9C%EB%9F%AC_%EC%A0%95%EB%A9%B4_%ED%86%A0%EB%81%BC%ED%99%80%EB%B3%B5.png" 
+            alt="강남 카지노 VIP 라운지 전담 딜러" 
+            class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700"
+            onerror="this.onerror=null; this.src='1. 딜러_정면_토끼홀복.png';"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-noir-950/80 via-transparent to-transparent"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Process Section -->
+  <section class="py-20 md:py-28 relative">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="max-w-2xl mb-14">
+        <p class="text-xs font-bold tracking-widest text-gold-500 uppercase mb-2">Service Process</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-white tracking-tight">원스톱 VIP 컨시어지 프로세스</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 01 (Image 02) -->
+        <div class="bg-noir-900/70 backdrop-blur-xl rounded-2xl p-6 gold-border gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 gold-border bg-noir-950">
+              <img 
+                src="./2.%20%EC%8B%A4%EC%A0%9C%EC%B9%B4%EC%A7%80%EB%85%B8%EC%B9%A9%EA%B3%BC%20%ED%8A%B8%EB%A0%88%EC%9D%B4.png" 
+                alt="전용 카지노 칩 및 트레이 준비" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='2. 실제카지노칩과 트레이.png';"
+              />
+            </div>
+            <span class="text-xs font-bold tracking-wider text-gold-500 uppercase">Step 01</span>
+            <h3 class="text-xl font-bold text-white mt-1 mb-3">사전 방문 예약</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              100% 사전 예약제로 강남 카지노 전용 테이블을 단독 확보합니다. 24시간 상주 컨시어지가 완벽한 일정을 조율합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 02 (Image 03) -->
+        <div class="bg-noir-900/70 backdrop-blur-xl rounded-2xl p-6 gold-border gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 gold-border bg-noir-950">
+              <img 
+                src="./3.%20%EC%B9%B4%EC%A7%80%EB%85%B8%EB%A1%9C%EB%B9%84%20%EC%BB%A8%EC%8B%9C%EC%96%B4%EC%A7%80%20%EC%83%81%EB%8B%B4.png" 
+                alt="카지노 로비 컨시어지 픽업 및 상담" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='3. 카지노로비 컨시어지 상담.png';"
+              />
+            </div>
+            <span class="text-xs font-bold tracking-wider text-gold-500 uppercase">Step 02</span>
+            <h3 class="text-xl font-bold text-white mt-1 mb-3">전용 의전 및 상담</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              도착 즉시 지원되는 프리미엄 의전 서비스와 함께, 고객 성향에 맞춘 최적화된 프라이빗 룸을 컨택합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 03 (Image 04) -->
+        <div class="bg-noir-900/70 backdrop-blur-xl rounded-2xl p-6 gold-border gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 gold-border bg-noir-950">
+              <img 
+                src="./4.%20%EB%B0%94%EC%B9%B4%EB%9D%BC%20%EC%A7%84%ED%96%89%ED%85%8C%EC%9D%B4%EB%B8%94.png" 
+                alt="실제 바카라 테이블 게임 안내" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='4. 바카라 진행테이블.png';"
+              />
+            </div>
+            <span class="text-xs font-bold tracking-wider text-gold-500 uppercase">Step 03</span>
+            <h3 class="text-xl font-bold text-white mt-1 mb-3">전담 테이블 안내</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              바카라, 블랙잭 등 각 분야 최고의 숙련도를 갖춘 전담 딜러가 오직 고객만을 위한 정갈한 게임을 전개합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 04 (Image 05) -->
+        <div class="bg-noir-900/70 backdrop-blur-xl rounded-2xl p-6 gold-border gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/10] rounded-xl overflow-hidden mb-5 gold-border bg-noir-950">
+              <img 
+                src="./5.%20%EC%B9%B4%EC%A7%80%EB%85%B8%20VIP%20%EC%BB%A8%EC%8B%9C%EC%96%B4%EC%A7%80%20%EC%84%9C%EB%B9%84%EC%8A%A4.png" 
+                alt="VIP 라운지 샴페인 및 음료 컨시어지 케어" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='5. 카지노 VIP 컨시어지 서비스.png';"
+              />
+            </div>
+            <span class="text-xs font-bold tracking-wider text-gold-500 uppercase">Step 04</span>
+            <h3 class="text-xl font-bold text-white mt-1 mb-3">프리미엄 하스피탈리티</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              최고급 샴페인과 호텔 파인다이닝 케어, 동선 겹침이 전혀 없는 철저한 프라이버시 환경을 제공합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promotions & Events Section -->
+  <section class="py-20 md:py-28 bg-gradient-to-b from-noir-950 via-noir-900 to-noir-950 border-y border-gold-500/20 relative">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="max-w-2xl mb-14">
+        <p class="text-xs font-bold tracking-widest text-gold-500 uppercase mb-2">Benefits & Event</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-white tracking-tight">시그니처 프로모션 & 멤버십</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Event 1 (Image 06) -->
+        <div class="rounded-2xl gold-border bg-noir-950/80 p-6 gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/9] rounded-xl overflow-hidden mb-6 gold-border bg-noir-900">
+              <img 
+                src="./6.%20%EB%8D%B0%EC%9D%BC%EB%A6%AC%EC%9D%B4%EB%B2%A4%ED%8A%B8.png" 
+                alt="데일리 기브어웨이 이벤트" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='6. 데일리이벤트.png';"
+              />
+            </div>
+            <div class="w-8 h-8 rounded-lg bg-gold-500/15 border border-gold-500/30 text-gold-400 flex items-center justify-center font-bold text-sm mb-3">01</div>
+            <h3 class="text-xl font-bold text-white mb-2">데일리 럭셔리 기프트</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              매일 엄선되는 프리미엄 기프트 패스와 최고급 식음료 및 디저트가 제공되는 데일리 프로그램입니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Event 2 (Image 07) -->
+        <div class="rounded-2xl gold-border bg-noir-950/80 p-6 gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/9] rounded-xl overflow-hidden mb-6 gold-border bg-noir-900">
+              <img 
+                src="./7.%20%EC%9C%84%ED%81%B4%EB%A6%AC%20%EC%9D%B4%EB%B2%A4%ED%8A%B8.png" 
+                alt="위클리 VIP 나잇 프로그램" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                onerror="this.onerror=null; this.src='7. 위클리 이벤트.png';"
+              />
+            </div>
+            <div class="w-8 h-8 rounded-lg bg-gold-500/15 border border-gold-500/30 text-gold-400 flex items-center justify-center font-bold text-sm mb-3">02</div>
+            <h3 class="text-xl font-bold text-white mb-2">위클리 VIP 나잇</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              주간 최상위 멤버십 전용 프로그램으로, 특별 지정 프라이빗 룸과 해외 럭셔리 트립 패키지 리워드를 제공합니다.
+            </p>
+          </div>
+        </div>
+
+        <!-- Event 3 -->
+        <div class="rounded-2xl gold-border bg-noir-950/80 p-6 gold-border-hover transition-all flex flex-col justify-between group">
+          <div>
+            <div class="aspect-[16/9] rounded-xl overflow-hidden mb-6 gold-border bg-gradient-to-br from-amber-950/40 via-noir-900 to-black flex items-center justify-center p-6 text-center">
+              <div>
+                <span class="text-gold-500 font-bold tracking-widest text-xs uppercase block mb-2">BLACK & PLATINUM</span>
+                <p class="text-white font-bold text-xl tracking-wider">VIP MEMBERSHIP PASS</p>
+              </div>
+            </div>
+            <div class="w-8 h-8 rounded-lg bg-gold-500/15 border border-gold-500/30 text-gold-400 flex items-center justify-center font-bold text-sm mb-3">03</div>
+            <h3 class="text-xl font-bold text-white mb-2">블랙 멤버십 케어</h3>
+            <p class="text-slate-400 text-sm leading-relaxed font-normal">
+              철저한 신원 보안과 1:1 직통 전담 비서급 매니저 배정, 제휴 5성급 호텔 스위트 연계 혜택을 지원합니다.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 24/7 Hours & Visual Section (Image 08) -->
+  <section class="py-20 md:py-28 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-5 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="lg:col-span-4 space-y-6">
+        <span class="inline-block px-3 py-1 rounded bg-gold-500/10 border border-gold-500/30 text-xs font-bold tracking-widest text-gold-400 uppercase">
+          24 / 7 ALL-TIME SERVICE
+        </span>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-white leading-snug">
+          365일 24시간,<br />
+          끊김 없는 하이엔드 케어
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base leading-relaxed font-normal">
+          언제 방문하시더라도 기다림 없는 완벽한 준비를 약속드립니다. 강남 카지노 전문 컨시어지 데스크가 365일 실시간으로 즉각 대응합니다.
+        </p>
+      </div>
+
+      <!-- Center: Image 08 -->
+      <div class="lg:col-span-4">
+        <div class="aspect-[4/3] rounded-2xl overflow-hidden gold-border bg-noir-900 shadow-2xl">
+          <img 
+            src="./8.%20365%EC%9D%BC_24%EC%8B%9C%EA%B0%84%EC%9A%B4%EC%98%81.png" 
+            alt="365일 24시간 프라이빗 라운지 운영" 
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+            onerror="this.onerror=null; this.src='8. 365일_24시간운영.png';"
+          />
+        </div>
+      </div>
+
+      <!-- Right: Stats Grid -->
+      <div class="lg:col-span-4 grid grid-cols-2 gap-3.5">
+        <div class="p-6 rounded-2xl bg-noir-900/80 backdrop-blur-xl gold-border">
+          <p class="text-3xl font-bold gold-gradient-text mb-1">365<span class="text-gold-400 text-sm">일</span></p>
+          <p class="text-xs text-slate-400 tracking-wider font-normal">올타임 컨시어지</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-noir-900/80 backdrop-blur-xl gold-border">
+          <p class="text-3xl font-bold gold-gradient-text mb-1">100<span class="text-gold-400 text-sm">%</span></p>
+          <p class="text-xs text-slate-400 tracking-wider font-normal">사전 승인 멤버 전용</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-noir-900/80 backdrop-blur-xl gold-border">
+          <p class="text-3xl font-bold gold-gradient-text mb-1">1 : 1</p>
+          <p class="text-xs text-slate-400 tracking-wider font-normal">전담 매니저 매칭</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-noir-900/80 backdrop-blur-xl gold-border">
+          <p class="text-3xl font-bold gold-gradient-text mb-1">0<span class="text-gold-400 text-sm">min</span></p>
+          <p class="text-xs text-slate-400 tracking-wider font-normal">다이렉트 즉시 입장</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIP Reviews -->
+  <section class="py-20 md:py-28 border-t border-gold-500/20 bg-noir-950/60">
+    <div class="max-w-7xl mx-auto px-5">
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <p class="text-xs font-bold tracking-widest text-gold-500 uppercase mb-2">Member Reviews</p>
+        <h2 class="text-2xl md:text-4xl font-bold text-white tracking-tight">VIP 멤버 실제 이용 후기</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-noir-900/60 backdrop-blur-xl p-8 rounded-2xl gold-border flex flex-col justify-between">
+          <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+            "공항 픽업부터 강남 카지노 라운지 입장까지 대기시간 하나 없이 매끄러웠습니다. 다른 고객들과 동선이 완벽히 분리되어 편안하게 집중할 수 있었습니다."
+          </p>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gold-500/15 gold-border flex items-center justify-center font-bold text-xs text-gold-400">K</div>
+            <div>
+              <p class="text-sm font-bold text-white">김*우 고객님</p>
+              <p class="text-xs text-gold-500/80 font-normal">블랙 멤버십 이용</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-noir-900/60 backdrop-blur-xl p-8 rounded-2xl gold-border flex flex-col justify-between">
+          <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+            "바카라 테이블 전담 딜러분의 매끄러운 템포 조율이 훌륭했습니다. 번잡하지 않은 묵직하고 정숙한 분위기가 아주 만족스러웠습니다."
+          </p>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gold-500/15 gold-border flex items-center justify-center font-bold text-xs text-gold-400">P</div>
+            <div>
+              <p class="text-sm font-bold text-white">박*진 고객님</p>
+              <p class="text-xs text-gold-500/80 font-normal">프라이빗 테이블 이용</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-noir-900/60 backdrop-blur-xl p-8 rounded-2xl gold-border flex flex-col justify-between">
+          <p class="text-slate-300 text-sm leading-relaxed mb-6 font-normal">
+            "새벽 시간대 문의에도 실시간 피드백이 매우 신속했습니다. 최고급 샴페인 세팅과 컨시어지 의전 수준이 5성급 호텔 이상입니다."
+          </p>
+          <div class="flex items-center gap-3.5 pt-4 border-t border-white/5">
+            <div class="w-10 h-10 rounded-full bg-gold-500/15 gold-border flex items-center justify-center font-bold text-xs text-gold-400">I</div>
+            <div>
+              <p class="text-sm font-bold text-white">이*훈 고객님</p>
+              <p class="text-xs text-gold-500/80 font-normal">위클리 VIP 나잇 이용</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA & Footer -->
+  <footer class="border-t border-gold-500/20 pt-16 pb-12 bg-noir-950">
+    <div class="max-w-7xl mx-auto px-5">
+      <!-- 상단 액션 영역 -->
+      <div class="max-w-4xl mx-auto text-center space-y-6 mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">
+          지금 바로 강남 카지노 전담 컨시어지와 연결하십시오
+        </h2>
+        <p class="text-slate-400 text-sm md:text-base font-normal">
+          사전 예약 승인 및 맞춤형 프라이빗 테이블 조율은 24시간 전용 직통 채널을 통해 즉시 확인 가능합니다.
+        </p>
+
+        <!-- 3 CTA Buttons (Footer) -->
+        <div class="flex flex-col sm:flex-row justify-center gap-3.5 pt-4 max-w-2xl mx-auto">
+          <a href="tel:01064931858" class="shine-effect animate-btn-pulse flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl gold-button-gradient text-noir-950 font-bold hover:brightness-110 active:scale-95 transition-all shadow-xl">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+            <span>바로 전화연결</span>
+          </a>
+
+          <a href="https://t.me/ktx3309" target="_blank" rel="noopener noreferrer" class="shine-effect flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#229ED9] hover:bg-[#1C8EC4] text-white font-bold active:scale-95 transition-all shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            <span>텔레그램 연결</span>
+          </a>
+
+          <a href="https://open.kakao.com/me/ppkkyu333" target="_blank" rel="noopener noreferrer" class="shine-effect flex-1 flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-[#FEE500] hover:bg-[#FADA0A] text-[#191919] font-bold active:scale-95 transition-all shadow-md">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.88 5.37 4.71 6.74-.21.78-.76 2.82-.87 3.25-.14.54.2.53.42.38.17-.11 2.75-1.87 3.86-2.63.62.09 1.24.14 1.88.14 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+            <span>카카오톡 연결</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- [하단 영역] 좌측 강남 카지노 로고 + 우측 라이선스 & 연락처 정보 -->
+      <div class="pt-10 border-t border-gold-500/15 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+        <!-- 푸터 하단 왼쪽: 강남 카지노 럭셔리 로고 세트 -->
+        <div class="flex items-center gap-3.5">
+          <div class="relative flex items-center justify-center">
+            <svg class="w-11 h-11" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="footerGoldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#FFF5D6"/>
+                  <stop offset="35%" stop-color="#E5C77A"/>
+                  <stop offset="70%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#937218"/>
+                </linearGradient>
+              </defs>
+              <polygon points="50,6 88,27 88,68 50,94 12,68 12,27" stroke="url(#footerGoldGrad)" stroke-width="2.5" fill="#0C1017"/>
+              <polygon points="50,12 82,30 82,65 50,88 18,65 18,30" stroke="url(#footerGoldGrad)" stroke-width="1" stroke-dasharray="2 3" stroke-opacity="0.6"/>
+              <path d="M37 34 L42 42 L50 30 L58 42 L63 34 L61 45 L39 45 Z" fill="url(#footerGoldGrad)"/>
+              <circle cx="50" cy="27" r="2" fill="url(#footerGoldGrad)"/>
+              <circle cx="37" cy="31" r="1.5" fill="url(#footerGoldGrad)"/>
+              <circle cx="63" cy="31" r="1.5" fill="url(#footerGoldGrad)"/>
+              <path d="M36 49 L46.5 73 L53.5 73 L64 49 L58 49 L50 67 L42 49 Z" fill="url(#footerGoldGrad)"/>
+              <polygon points="50,77 51.5,81 55,81 52,83 53.5,86.5 50,84.5 46.5,86.5 48,83 45,81 48.5,81" fill="url(#footerGoldGrad)"/>
+            </svg>
+          </div>
+          <div>
+            <span class="text-base font-bold tracking-[0.16em] text-white block leading-tight">
+              강남 카지노 <span class="gold-gradient-text">VIP LOUNGE</span>
+            </span>
+            <span class="text-[9px] tracking-[0.24em] text-gold-400 font-bold uppercase mt-0.5 block">
+              Private Concierge & Club
+            </span>
+            <p class="text-xs text-slate-500 mt-1 font-normal">
+              100% 사전 예약제 프라이빗 럭셔리 라운지
+            </p>
+          </div>
+        </div>
+
+        <!-- 푸터 하단 오른쪽: 연락망 및 저작권 -->
+        <div class="text-left md:text-right text-xs text-slate-400 space-y-1.5 font-normal">
+          <p class="text-slate-300">
+            직통 전화: <span class="text-gold-400 font-bold">010-6493-1858</span> | 텔레그램: <span class="text-[#229ED9] font-bold">@ktx3309</span> | 카카오톡: <span class="text-[#FEE500] font-bold">@ppkkyu333</span>
+          </p>
+          <p class="text-slate-500">© 2026 강남 카지노 VIP CONCIERGE & LOUNGE. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Fixed Bottom Sticky 3-Button Bar -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-noir-950/95 backdrop-blur-xl border-t border-gold-500/30 px-3 py-2.5 flex items-center gap-2 shadow-2xl">
+    <!-- 버튼 1: 전화연결 -->
+    <a href="tel:01064931858" class="flex-1 flex flex-col items-center justify-center py-2 rounded-lg gold-border bg-noir-900 text-gold-300 active:scale-95 transition-transform">
+      <svg class="w-4 h-4 fill-current mb-0.5" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.57a1 1 0 01-.25 1.02l-2.2 2.2z"/></svg>
+      <span class="text-[11px] font-bold">전화연결</span>
+    </a>
+
+    <!-- 버튼 2: 텔레그램 연결 -->
+    <a href="https://t.me/ktx3309" target="_blank" rel="noopener noreferrer" class="flex-1 flex flex-col items-center justify-center py-2 rounded-lg bg-[#229ED9] text-white active:scale-95 transition-transform shadow">
+      <svg class="w-4 h-4 fill-current mb-0.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+      <span class="text-[11px] font-bold">텔레그램</span>
+    </a>
+
+    <!-- 버튼 3: 카카오톡 연결 -->
+    <a href="https://open.kakao.com/me/ppkkyu333" target="_blank" rel="noopener noreferrer" class="shine-effect animate-btn-pulse flex-1 flex flex-col items-center justify-center py-2 rounded-lg bg-[#FEE500] text-[#191919] active:scale-95 transition-transform shadow-lg">
+      <svg class="w-4 h-4 fill-current mb-0.5" viewBox="0 0 24 24"><path d="M12 3c-5.52 0-10 3.58-10 8 0 2.86 1.88 5.37 4.71 6.74-.21.78-.76 2.82-.87 3.25-.14.54.2.53.42.38.17-.11 2.75-1.87 3.86-2.63.62.09 1.24.14 1.88.14 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/></svg>
+      <span class="text-[11px] font-bold">카카오톡</span>
+    </a>
+  </div>
+
+</body>
+</html>
