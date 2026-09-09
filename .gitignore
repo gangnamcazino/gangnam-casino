@@ -10,3 +10,12 @@ Desktop.ini
 # Editor directories
 .vscode/
 .idea/
+
+# Virtual Environment & Python
+.venv/
+__pycache__/
+*.ps1
+backup_originals/
+test_opt.*
+
+
