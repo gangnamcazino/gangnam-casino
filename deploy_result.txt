@@ -1,2 +1,2 @@
-REPO_URL=https://github.com/jamannim/gangnam-casino
-PAGES_URL=https://jamannim.github.io/gangnam-casino/
+REPO_URL=https://github.com/gangnamcazino/gangnam-casino
+PAGES_URL=https://gangnamcazino.github.io/gangnam-casino/
