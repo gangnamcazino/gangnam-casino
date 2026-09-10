@@ -1,0 +1,10 @@
+# robots.txt for https://gangnamcazino.github.io/gangnam-casino/
+User-agent: *
+Allow: /
+
+# Googlebot specific
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://gangnamcazino.github.io/gangnam-casino/sitemap.xml
